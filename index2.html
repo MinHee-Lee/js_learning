@@ -1,0 +1,26 @@
+var txt1 = 'text1';
+console.log(txt1);
+
+if (true) {
+  var txt2 = 'text2';
+  console.log(txt2);
+}
+
+console.log(txt1);
+console.log(txt2);
+
+let txt1_1 = 'text1_1';
+const txt3 = 'hello!!';
+console.log(txt1_1);
+
+<!-- JS는 블럭 안에 쓰인 변수가 블럭 밖에서 사용이 가능함 -->
+<!-- 그러나 블럭 안에서 let으로 선언된 변수는 블럭 밖에서 참조 불가능 -->
+if (true) {
+  let txt2_2 = 'text2_2';
+  console.log(txt2_2);
+}
+
+console.log(txt1_1);
+//console.log(txt2_2);  //let으로 선언한 변수이므로 블럭 밖에서 사용 불가
+//txt3 = 'world'; //const로 선언했기 때문에 값 변경이 불가함
+console.log(txt3);
