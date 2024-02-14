@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- lang 속성은 웹 접근성에 관한 내용 -->
+<html lang="en">
+
+<head>
+    <!-- html 파일의 인코딩을 알려주는 태그, 없을 시 외계어처럼 출력됌 -->
+    <meta charset="UTF-8">
+    <!-- 뷰포트, 너비를 장치너비로 설정, 초기화면 배율 1.0(100%) 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- edge mode, IE 버전 중 가장 최신 모드로 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 브라우저 탭 제목, 검색 엔진 등에서 가장 크게 보이는 텍스트 -->
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <div id="About" class="content">
+        <h1>About</h1>
+        <p>Custom Software Development Company</p>
+    </div>
+
+    <div id="Product" class="content">
+        <h1>Products</h1>
+        <p>Building tailored software to address critical needs of global enterprises.</p>
+    </div>
+
+    <div id="Technology" class="content">
+        <h1>Technology</h1>
+        <p>Machine Learning, Artificial Intelligent, Cloud Platform.</p>
+    </div>
+    <div id="Downloads" class="content">
+        <h1>Downloads</h1>
+        <p>You can download a free 10 dats trial.</p>
+    </div>
+
+
+    <button id="default" class="tab" onclick="openMenu('About', this, 'tomato')">About</button>
+    <button id="tab" onclick="openMenu('Products', this, 'darkolivegreen')">Products</button>
+    <button id="tab" onclick="openMenu('Technology', this, 'dodgerblue')">Technology</button>
+    <button id="tab" onclick="openMenu('Downloads', this, 'orange')">Downloads</button>
+
+    <script>
+        document.getElementById('default').click();
+
+        function openMenu(target, seltab, color) {
+
+            var contents = document.getElementsByClassName("content");
+            var tabs = document.getElementsByClassName("tab");
+
+            for (var i = 0; i < contents.length; i++) {
+                var content = contents.item(i);
+                content.style.display = "none";
+            }
+
+            for (var i = 0; i < tabs.length; i++) {
+                var tab = tabs.item(i);
+                tab.style.background = "#555";
+            }
+
+            document.getElementById(target).style.display = "block";
+            seltab.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+
+</html>
